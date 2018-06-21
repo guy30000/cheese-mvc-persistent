@@ -35,6 +35,7 @@ public class CategoryController {
     public String displayAddCategoryForm(Model model) {
         model.addAttribute("title", "Add Category");
         model.addAttribute(new Category());
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         return "category/add";
     }
 
@@ -42,6 +43,7 @@ public class CategoryController {
     public String processAddCheeseForm(@ModelAttribute @Valid Category newCategory, Errors errors, Model model){
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Category");
+            System.out.println("YYYYYYYYYYYYYYYYYYYYYYYY");
             return "category/add";
         }
 
