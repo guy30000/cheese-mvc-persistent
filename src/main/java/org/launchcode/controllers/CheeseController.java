@@ -26,16 +26,14 @@ public class CheeseController {
     @Autowired
     private CheeseDao cheeseDao;
 
-    @Autowired   //added in p2
+    @Autowired //added in p2
     private CategoryDao categoryDao;
 
-    // Request path: /cheese
     @RequestMapping(value = "")
     public String index(Model model) {
 
         model.addAttribute("cheeses", cheeseDao.findAll());
         model.addAttribute("title", "My Cheeses");
-        model.addAttribute("categories",categoryDao.findAll()); //added in p2
 
         return "cheese/index";
     }
@@ -44,6 +42,7 @@ public class CheeseController {
     public String displayAddCheeseForm(Model model) {
         model.addAttribute("title", "Add Cheese");
         model.addAttribute(new Cheese());
+        model.addAttribute("categories",categoryDao.findAll()); //added in p2 (Saved in wrong place on p2)
         System.out.println("AAAAAAAAAAAAAAA");
         // model.addAttribute("cheeseTypes", CheeseType.values()); //disabled in p2
         return "cheese/add";

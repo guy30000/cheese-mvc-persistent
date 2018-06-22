@@ -8,11 +8,12 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<p th:unless="${categories} and ${categories.size()}">no categories :(</p>
+<!--killed this in p3-->
+<!--<p th:unless="${categories} and ${categories.size()}">no categories :(</p>-->
+<!--<ul>   -->
+    <!--<li th:each="category : ${categories}"><div th:text="${category.name}"></div></li>-->
+<!--</ul>-->
 
-<ul>
-    <li th:each="category : ${categories}"><div th:text="${category.name}"></div></li>
-</ul>
 <!--Givinn ^-->
 <p th:unless="${cheeses} and ${cheeses.size()}">no cheese :(</p>
 
@@ -32,6 +33,9 @@
     </tr>
 
 </table>
-
+<nav>  <!--added in p3-->
+    <a href="/cheese/add">Add</a> |
+    <a href="/cheese/remove">Remove</a>
+</nav>
 </body>
 </html>
